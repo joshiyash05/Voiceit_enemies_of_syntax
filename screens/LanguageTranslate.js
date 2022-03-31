@@ -31,7 +31,8 @@ const LanguageTranslate = () => {
   return (
     <View
       style={{
-        backgroundColor: '#F6FFA4',
+        backgroundColor: '#B6FFCE',
+        flex: 1,
       }}>
       <View
         style={{
@@ -59,6 +60,8 @@ const LanguageTranslate = () => {
         <Text
           style={{
             fontSize: 25,
+            color: 'black',
+            fontWeight: 'bold',
           }}>
           Language Translator
         </Text>
@@ -66,6 +69,10 @@ const LanguageTranslate = () => {
           placeholder="Enter Text"
           value={text}
           onChangeText={text => setText(text)}
+          style={{
+            height: 80,
+            fontSize: 20,
+          }}
         />
         <Picker
           style={{
@@ -81,7 +88,9 @@ const LanguageTranslate = () => {
           <Picker.Item label="Tamil" value="ta" />
           <Picker.Item label="Urdu" value="ur" />
         </Picker>
-        <Text style={{fontSize: 20}}>{translatedText}</Text>
+        <Text style={{fontSize: 20, paddingVertical: 20}}>
+          {translatedText}
+        </Text>
         <Button onPress={() => translateData()} title="Translate" />
       </View>
     </View>
