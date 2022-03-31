@@ -1,6 +1,8 @@
 import {
   Button,
+  Image,
   SafeAreaView,
+  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -11,19 +13,52 @@ import React from 'react';
 
 const VisuallyImpaired = ({navigation}) => {
   return (
-    <View>
-      <TouchableOpacity style={styles.options} onPress={() => navigation.navigate('TextToSpeech')}>
-        <Text style={styles.optionsTitle}>Text To Speech</Text>
-        <Text style={styles.optionsDesc}>This feature will convert the text given by the user into speech</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.options} onPress={() => navigation.navigate('SpeechToText')} >
-        <Text style={styles.optionsTitle}>Speech To Text</Text>
-        <Text style={styles.optionsDesc}>This feature will convert the speech given by the user into text</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.options} onPress={() => navigation.navigate('Object Detection')} >
-        <Text style={styles.optionsTitle}>Object Detection</Text>
-        <Text style={styles.optionsDesc}>This feature will detect the object that will be shown by the user from the camera</Text>
-      </TouchableOpacity>
+    <View style={{paddingHorizontal: 5}}>
+      <ScrollView>
+        <TouchableOpacity
+          style={styles.options}
+          onPress={() => navigation.navigate('TextToSpeech')}>
+          <Image
+            source={{
+              uri: 'https://1.cms.s81c.com/sites/default/files/2021-07/watson-tts-overview_0.png',
+            }}
+            style={{
+              width: '100%',
+              height: 100,
+            }}
+          />
+          <Text style={styles.optionsTitle}>Text To Speech</Text>
+          <Text style={styles.optionsDesc}>
+            This feature will convert the text given by the user into speech
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.options}
+          onPress={() => navigation.navigate('SpeechToText')}>
+          <Image
+            source={{
+              uri: 'https://1.cms.s81c.com/sites/default/files/2021-07/wstt-overview.png',
+            }}
+            style={{
+              width: '100%',
+              height: 100,
+            }}
+          />
+          <Text style={styles.optionsTitle}>Speech To Text</Text>
+          <Text style={styles.optionsDesc}>
+            This feature will convert the speech given by the user into text
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.options}
+          onPress={() => navigation.navigate('Object Detection')}>
+          <Text style={styles.optionsTitle}>Object Detection</Text>
+          <Text style={styles.optionsDesc}>
+            This feature will detect the object that will be shown by the user
+            from the camera
+          </Text>
+        </TouchableOpacity>
+      </ScrollView>
     </View>
   );
 };
@@ -31,23 +66,24 @@ const VisuallyImpaired = ({navigation}) => {
 export default VisuallyImpaired;
 
 const styles = StyleSheet.create({
-    options:{
-        padding:10,
-        backgroundColor:"white",
-        elevation:3,
-        height:150,
-        marginTop:20,
-        marginHorizontal:10
-    },
-    optionsTitle:{
-        fontSize:20,
-        fontWeight:"bold",
-        fontFamily:"Roboto",
-        color:"black"
-    },
-    optionsDesc:{
-        fontSize:18,
-        lineHeight:20,
-        marginTop:20
-    }
+  options: {
+    padding: 10,
+    backgroundColor: '#FAFFAF',
+    elevation: 3,
+    height: 250,
+    marginTop: 20,
+    marginHorizontal: 10,
+  },
+  optionsTitle: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    fontFamily: 'Roboto',
+    color: 'black',
+    marginTop: 20,
+  },
+  optionsDesc: {
+    fontSize: 18,
+    lineHeight: 20,
+    marginTop: 15,
+  },
 });
