@@ -1,6 +1,8 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import Card from '../components/Card';
+import HeaderComponent from '../components/HeaderComponent';
+import {ScrollView} from 'react-native-gesture-handler';
 
 const Home = ({navigation}) => {
   const data = [
@@ -34,17 +36,32 @@ const Home = ({navigation}) => {
   ];
   return (
     <View style={styles.container}>
-      <View style={styles.homeCards}>
-        {data.map(card => (
-          <Card
-            image={card.image}
-            key={card.id}
-            navigation={navigation}
-            title={card.title}
-            navigate={card.navigation}
-          />
-        ))}
-      </View>
+      <ScrollView>
+        <View>
+          <HeaderComponent />
+        </View>
+        <Text
+          style={{
+            padding: 15,
+            paddingLeft: 25,
+            fontSize: 30,
+            color: 'black',
+            fontWeight: 'bold',
+          }}>
+          Explore our Features
+        </Text>
+        <View style={styles.homeCards}>
+          {data.map(card => (
+            <Card
+              image={card.image}
+              key={card.id}
+              navigation={navigation}
+              title={card.title}
+              navigate={card.navigation}
+            />
+          ))}
+        </View>
+      </ScrollView>
     </View>
   );
 };
@@ -59,8 +76,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 
-  container:{
-    backgroundColor:'white',
-    flex:1
-  }
+  container: {
+    backgroundColor: 'white',
+    flex: 1,
+  },
 });
