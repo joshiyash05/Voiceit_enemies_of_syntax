@@ -33,6 +33,13 @@ const Home = ({navigation}) => {
       image:
         'https://i.pinimg.com/736x/b1/fd/4f/b1fd4f521e136fb90b791903d15cabbf.jpg',
     },
+    {
+      id: 5,
+      title: 'Language Translate',
+      navigation: 'LanguageTranslate',
+      image:
+        'https://www.freepnglogos.com/uploads/translate-logo-png/line-icon-logos-alteration-translate-language-21.png',
+    },
   ];
   return (
     <View style={styles.container}>
