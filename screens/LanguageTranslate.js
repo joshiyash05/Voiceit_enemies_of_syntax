@@ -56,7 +56,12 @@ const LanguageTranslate = () => {
         style={{
           padding: 20,
         }}>
-        <Text>Language Translator</Text>
+        <Text
+          style={{
+            fontSize: 25,
+          }}>
+          Language Translator
+        </Text>
         <TextInput
           placeholder="Enter Text"
           value={text}
