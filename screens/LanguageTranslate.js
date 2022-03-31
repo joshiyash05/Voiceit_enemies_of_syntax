@@ -1,6 +1,6 @@
-import {Button, Image, StyleSheet, Text, TextInput, View} from 'react-native';
-import React, {useEffect, useState} from 'react';
-import {Picker} from '@react-native-picker/picker';
+import { Button, Image, StyleSheet, Text, TextInput, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Picker } from '@react-native-picker/picker';
 const LanguageTranslate = () => {
   const [language, setLanguage] = useState('en');
   const [text, setText] = useState('');
@@ -31,7 +31,7 @@ const LanguageTranslate = () => {
   return (
     <View
       style={{
-        backgroundColor: '#B6FFCE',
+        backgroundColor: '#FFFFFF',
         flex: 1,
       }}>
       <View
@@ -43,9 +43,7 @@ const LanguageTranslate = () => {
           borderRadius: 30,
         }}>
         <Image
-          source={{
-            uri: 'https://www.betranslated.com/wp-content/uploads/2019/12/Maintain-second-language-as-a-translator.jpg',
-          }}
+          source={require('../assets/voiceit.jpg')}
           style={{
             width: '100%',
             height: 250,
@@ -88,7 +86,7 @@ const LanguageTranslate = () => {
           <Picker.Item label="Tamil" value="ta" />
           <Picker.Item label="Urdu" value="ur" />
         </Picker>
-        <Text style={{fontSize: 20, paddingVertical: 20}}>
+        <Text style={{ fontSize: 20, paddingVertical: 20 }}>
           {translatedText}
         </Text>
         <Button onPress={() => translateData()} title="Translate" />

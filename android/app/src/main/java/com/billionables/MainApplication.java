@@ -14,6 +14,7 @@ import java.lang.reflect.InvocationTargetException;
 import com.imagepicker.ImagePickerPackage;
 import net.no_mad.tts.TextToSpeechPackage;
 import java.util.List;
+import com.wenkesj.voice.VoicePackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -28,6 +29,7 @@ public class MainApplication extends Application implements ReactApplication {
         protected List<ReactPackage> getPackages() {
           @SuppressWarnings("UnnecessaryLocalVariable")
           List<ReactPackage> packages = new PackageList(this).getPackages();
+          new VoicePackage();
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
           return packages;

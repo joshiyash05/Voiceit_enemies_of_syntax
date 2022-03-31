@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, { useState, useContext } from 'react';
 import {
   View,
   Text,
@@ -9,10 +9,10 @@ import {
   Image,
   ScrollView,
 } from 'react-native';
-import {AuthContext} from '../navigation/AuthProvider.android.js';
+import { AuthContext } from '../navigation/AuthProvider.android.js';
 
-const Profile = ({navigation, route}) => {
-  const {logout} = useContext(AuthContext);
+const Profile = ({ navigation, route }) => {
+  const { logout } = useContext(AuthContext);
 
   return (
     <View style={styles.container}>
@@ -31,7 +31,7 @@ const Profile = ({navigation, route}) => {
             }}
             style={{
               flex: 1,
-              resizeMode:"cover",
+              resizeMode: "cover",
               elevation: 3,
               borderBottomLeftRadius: 30,
               borderBottomRightRadius: 30,
@@ -49,22 +49,22 @@ const Profile = ({navigation, route}) => {
           About Us
         </Text>
         <View
-          style={{flexDirection: 'row', alignItems: 'center', marginTop: 10}}>
+          style={{ flexDirection: 'row', alignItems: 'center', marginTop: 10 }}>
           <Image
             style={styles.logo}
-            source={require('../assets/billionables.png')}
+            source={require('../assets/voiceit.jpg')}
           />
           <Text
             style={{
               fontSize: 30,
               fontWeight: 'bold',
               marginLeft: 20,
-              color:"#0F092D"
+              color: "#0F092D"
             }}>
-            Billion Ables
+            Voice It
           </Text>
         </View>
-        <View style={{alignItems: 'center', paddingHorizontal: 20}}>
+        <View style={{ alignItems: 'center', paddingHorizontal: 20 }}>
           <Text
             style={{
               fontSize: 20,
@@ -72,16 +72,13 @@ const Profile = ({navigation, route}) => {
             }}>
             We help to ensure that people with disabilities have equal
             opportunities. Having a disability shouldn’t exclude someone from
-            the opportunity to be independent. We provide different features for
-            the poor differently-abled and help them with communication and to
-            overcome stress, anxiety, depression so that they overcome the
-            disability and live a normal life.
+            the opportunity to be independent. It's not easy to communicate in real time with people who are deaf or hard of hearing.
           </Text>
         </View>
         <View style={{
-          flexDirection:"row",
-          marginVertical:10,
-          justifyContent:"space-around"
+          flexDirection: "row",
+          marginVertical: 10,
+          justifyContent: "space-around"
         }} >
           <TouchableOpacity
             style={styles.commandButton}
@@ -105,31 +102,26 @@ export default Profile;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor:'white'
+    backgroundColor: '#FFFFFF'
   },
   commandButton: {
     padding: 8,
     borderRadius: 10,
-    backgroundColor: '#28FF64',
+    backgroundColor: '#3BCBFF',
     alignItems: 'center',
-    marginTop: 10,   
-    
+    marginTop: 10,
+
   },
   panel: {
     padding: 20,
     backgroundColor: '#FFFFFF',
     paddingTop: 20,
-    // borderTopLeftRadius: 20,
-    // borderTopRightRadius: 20,
-    // shadowColor: '#000000',
-    // shadowOffset: {width: 0, height: 0},
-    // shadowRadius: 5,
-    // shadowOpacity: 0.4,
+
   },
   header: {
     backgroundColor: '#FFFFFF',
     shadowColor: '#333333',
-    shadowOffset: {width: -1, height: -3},
+    shadowOffset: { width: -1, height: -3 },
     shadowRadius: 2,
     shadowOpacity: 0.4,
     // elevation: 5,
@@ -216,8 +208,9 @@ const styles = StyleSheet.create({
     color: '#2e64e5',
   },
   logo: {
-    height: 100,
-    width: 100,
-    borderRadius: 30,
+    height: 80,
+    width: 80,
+    borderRadius: 20,
+    margin: 20
   },
 });

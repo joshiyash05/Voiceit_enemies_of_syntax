@@ -1,43 +1,43 @@
-import React, {useState, useContext} from 'react';
-import {View, StyleSheet, TouchableOpacity} from 'react-native';
-import {Text} from 'react-native-paper';
+import React, { useState, useContext } from 'react';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text } from 'react-native-paper';
 import Background from '../components/Background';
 import Header from '../components/Header';
 import Button from '../components/Button';
 import TextInput from '../components/TextInput';
 import BackButton from '../components/BackButton';
-import {theme} from '../core/theme';
-import {emailValidator} from '../helpers/emailValidator';
-import {passwordValidator} from '../helpers/passwordValidator';
-import {nameValidator} from '../helpers/nameValidator';
-import {AuthContext} from '../navigation/AuthProvider.android.js';
+import { theme } from '../core/theme';
+import { emailValidator } from '../helpers/emailValidator';
+import { passwordValidator } from '../helpers/passwordValidator';
+import { nameValidator } from '../helpers/nameValidator';
+import { AuthContext } from '../navigation/AuthProvider.android.js';
 
-export default function SignUpScreen({navigation}) {
-  const [name, setName] = useState({value: '', error: ''});
-  const [email, setEmail] = useState({value: '', error: ''});
-  const [password, setPassword] = useState({value: '', error: ''});
-  const {register} = useContext(AuthContext);
+export default function SignUpScreen({ navigation }) {
+  const [name, setName] = useState({ value: '', error: '' });
+  const [email, setEmail] = useState({ value: '', error: '' });
+  const [password, setPassword] = useState({ value: '', error: '' });
+  const { register } = useContext(AuthContext);
 
   const onSignUpPressed = () => {
     const nameError = nameValidator(name);
     const emailError = emailValidator(email);
     const passwordError = passwordValidator(password);
     if (emailError || passwordError || nameError) {
-      setName({...name, error: nameError});
-      setEmail({...email, error: emailError});
-      setPassword({...password, error: passwordError});
+      setName({ ...name, error: nameError });
+      setEmail({ ...email, error: emailError });
+      setPassword({ ...password, error: passwordError });
       return;
     }
     navigation.reset({
       index: 0,
-      routes: [{name: 'Dashboard'}],
+      routes: [{ name: 'Dashboard' }],
     });
   };
 
   return (
     <Background>
       <BackButton goBack={navigation.goBack} />
-      <Header>Create Account</Header>
+      <Text style={styles.header}>Register</Text>
       <TextInput
         label="Name"
         returnKeyType="next"
@@ -72,13 +72,13 @@ export default function SignUpScreen({navigation}) {
         keyboardType="default"
       />
 
-      <Button mode="contained" onPress={onSignUpPressed} style={{marginTop: 6}}>
+      <Button mode="contained" onPress={onSignUpPressed} style={{ marginTop: 6 }}>
         Validate
       </Button>
       <Button
         mode="contained"
         onPress={() => register(email, password)}
-        style={{marginTop: 6}}>
+        style={{ marginTop: 6 }}>
         Sign Up
       </Button>
       <View style={styles.row}>
@@ -97,13 +97,19 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
   best: {
-    
-    color:'#FFFFFF'
-  },
 
+    color: '#3BCBFF'
+  },
+  header: {
+
+    color: '#3BCBFF',
+    fontWeight: '700',
+    fontSize: 30,
+    fontFamily: 'Redressed-Regular'
+  },
   link: {
     fontWeight: 'bold',
-    color: theme.colors.primary,
+    color: '#3BCBFF',
   },
   buttonContainer: {
     width: '60%',
@@ -112,7 +118,7 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   button: {
-    backgroundColor: '#0782F9',
+    backgroundColor: '#3BCBFF',
     width: '100%',
     padding: 15,
     borderRadius: 10,
@@ -121,7 +127,7 @@ const styles = StyleSheet.create({
   buttonOutline: {
     backgroundColor: 'white',
     marginTop: 5,
-    borderColor: '#0782F9',
+    borderColor: '#3BCBFF',
     borderWidth: 2,
   },
   buttonText: {
@@ -130,7 +136,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   buttonOutlineText: {
-    color: '#0782F9',
+    color: '#3BCBFF',
     fontWeight: '700',
     fontSize: 16,
   },

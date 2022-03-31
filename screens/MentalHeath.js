@@ -1,5 +1,5 @@
 import {
-    Dimensions,
+  Dimensions,
   FlatList,
   Image,
   ScrollView,
@@ -8,14 +8,14 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import base64 from 'react-native-base64';
 import Feather from 'react-native-vector-icons/Feather';
 import TouchableScale from 'react-native-touchable-scale';
-import {data, popular} from '../constants/BlogData';
+import { data, popular } from '../constants/BlogData';
 const MentalHeath = props => {
-    const {width, height} = Dimensions.get('window');
+  const { width, height } = Dimensions.get('window');
   const [playlist, setPlaylist] = useState([]);
   useEffect(() => {
     axios('https://accounts.spotify.com/api/token', {
@@ -25,8 +25,8 @@ const MentalHeath = props => {
           'Basic ' +
           base64.encode(
             '85acc1ba7c3a4349b1abca61d53e2b26' +
-              ':' +
-              'ae1de5a2ad0c4ab4983f3d0a3b22ae68',
+            ':' +
+            'ae1de5a2ad0c4ab4983f3d0a3b22ae68',
           ),
       },
       data: 'grant_type=client_credentials',
@@ -47,7 +47,7 @@ const MentalHeath = props => {
     });
   }, []);
 
-  const renderItem = ({item}) => {
+  const renderItem = ({ item }) => {
     return (
       <TouchableOpacity
         onPress={() => {
@@ -59,7 +59,7 @@ const MentalHeath = props => {
         <View style={styles.track}>
           <View style={styles.trackImage}>
             <Image
-              source={{uri: item.images[0].url}}
+              source={{ uri: item.images[0].url }}
               style={{
                 width: 150,
                 height: 150,
@@ -75,26 +75,9 @@ const MentalHeath = props => {
   return (
     <View >
       <ScrollView >
-        <View >
-          <View style={styles.tracksContainer}>
-            <Text style={styles.trackTitle}>Tracks to refresh your mood!</Text>
-            <FlatList
-              renderItem={renderItem}
-              data={playlist}
-              horizontal={true}
-              keyExtractor={item => item.id}
-            />
-          </View>
-        </View>
+
         <View>
-          <TouchableOpacity
-            onPress={() => {
-              props.navigation.navigate('CreateMeme');
-            }}>
-            <View style={styles.createMemeContainer}>
-              <Text style={styles.createMemeText}>Create a Meme</Text>
-            </View>
-          </TouchableOpacity>
+
         </View>
         <View style={styles.container}>
           <View style={styles.YourDailyRead}>
@@ -115,8 +98,8 @@ const MentalHeath = props => {
               horizontal
               data={data}
               keyExtractor={item => item.id.toString()}
-              style={{paddingHorizontal: 20}}
-              renderItem={({item}) => {
+              style={{ paddingHorizontal: 20 }}
+              renderItem={({ item }) => {
                 return (
                   <View>
                     <View>
@@ -126,11 +109,11 @@ const MentalHeath = props => {
                         friction={7}
                         useNativeDriver
                         onPress={() =>
-                          props.navigation.navigate('OpenBlogScreen', {data: item})                          
+                          props.navigation.navigate('OpenBlogScreen', { data: item })
                         }>
                         <View>
                           <Image
-                            source={{uri: item.image}}
+                            source={{ uri: item.image }}
                             style={{
                               width: width - 100,
                               height: height - 500,
@@ -163,7 +146,7 @@ const MentalHeath = props => {
                         <View style={styles.profilePic2}>
                           <View>
                             <Image
-                              source={{uri: item.profilePic}}
+                              source={{ uri: item.profilePic }}
                               style={styles.profilePicStyle}
                               resizeMode="cover"
                             />
@@ -202,7 +185,7 @@ const MentalHeath = props => {
               paddingHorizontal: 30,
               paddingVertical: 15,
             }}>
-            <Text style={{fontSize: 20, fontWeight: 'bold', marginTop: -5}}>
+            <Text style={{ fontSize: 20, fontWeight: 'bold', marginTop: -5 }}>
               Popular Stories <Text style={styles.verticalLine}>|</Text>
             </Text>
           </View>
@@ -210,7 +193,7 @@ const MentalHeath = props => {
           <FlatList
             data={popular}
             keyExtractor={item => item.id.toString()}
-            renderItem={({item}) => {
+            renderItem={({ item }) => {
               return (
                 <View>
                   <TouchableScale
@@ -219,17 +202,17 @@ const MentalHeath = props => {
                     friction={7}
                     useNativeDriver
                     onPress={() =>
-                      props.navigation.navigate('OpenBlogScreen', {data: item})
+                      props.navigation.navigate('OpenBlogScreen', { data: item })
                     }>
                     <View style={styles.popularStories}>
-                      <View style={{marginRight: 20}}>
+                      <View style={{ marginRight: 20 }}>
                         <Image
-                          source={{uri: item.image}}
+                          source={{ uri: item.image }}
                           style={styles.BlogImage}
                         />
                       </View>
 
-                      <View style={{width: '60%', marginTop: -10}}>
+                      <View style={{ width: '60%', marginTop: -10 }}>
                         <Text></Text>
                         <Text
                           style={{
@@ -246,9 +229,9 @@ const MentalHeath = props => {
                             alignItems: 'center',
                             opacity: 0.4,
                           }}>
-                          <View style={{display: 'flex', flexDirection: 'row'}}>
+                          <View style={{ display: 'flex', flexDirection: 'row' }}>
                             <View>
-                              <Text style={{fontSize: 12}}>{item.author}</Text>
+                              <Text style={{ fontSize: 12 }}>{item.author}</Text>
                             </View>
                             <View
                               style={{
@@ -261,7 +244,7 @@ const MentalHeath = props => {
                                 size={14}
                                 color="#000"
                               />
-                              <Text style={{marginHorizontal: 4, fontSize: 12}}>
+                              <Text style={{ marginHorizontal: 4, fontSize: 12 }}>
                                 {item.likes} Likes
                               </Text>
                             </View>
@@ -289,15 +272,17 @@ const styles = StyleSheet.create({
     paddingTop: 0,
     paddingLeft: 20,
     position: 'relative',
+    backgroundColor: '#FFFFFF',
   },
-   container:{
-    backgroundColor:'white',
-    flex:1
+  container: {
+    backgroundColor: '#FFFFFF',
+    flex: 1
   },
   trackTitle: {
     fontSize: 18,
     textTransform: 'uppercase',
     fontWeight: 'bold',
+    backgroundColor: '#FFFFFF',
   },
   track: {
     width: 150,
@@ -315,6 +300,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'flex-end',
     paddingLeft: 10,
+    backgroundColor: '#FFFFFF',
     paddingBottom: 10,
   },
   trackImage: {
@@ -323,13 +309,14 @@ const styles = StyleSheet.create({
   createMemeContainer: {
     width: 150,
     height: 40,
-    backgroundColor: '#46703b',
+    backgroundColor: '#3BCBFF',
     borderRadius: 10,
     marginLeft: 20,
     marginBottom: 20,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+
   },
   createMemeText: {
     color: 'white',
@@ -385,5 +372,6 @@ const styles = StyleSheet.create({
     fontSize: 30,
     textShadowRadius: 4,
     textShadowColor: 'grey',
+    backgroundColor: '#FFFFFF',
   },
 });

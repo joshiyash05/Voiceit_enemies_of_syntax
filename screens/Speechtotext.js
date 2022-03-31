@@ -63,7 +63,7 @@ const Speechtotext = () => {
           {isLoading ? <ActivityIndicator size="large" color="red" />
 
             :
-            
+
             <TouchableOpacity
               onPress={startRecording}
             >
@@ -94,7 +94,8 @@ const Speechtotext = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 24
+    padding: 24,
+    backgroundColor: '#FFFFFF'
   },
   headingText: {
     alignSelf: 'center',

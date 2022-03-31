@@ -45,6 +45,7 @@
     "react-native-tts": "^4.1.0",
     "react-native-vector-icons": "^9.1.0",
     "react-native-webrtc": "^1.94.1",
+    "react-speech-recognition": "^3.9.0",
     "reanimated-bottom-sheet": "^1.0.0-alpha.22"
   },
   "devDependencies": {

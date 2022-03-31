@@ -1,10 +1,10 @@
-import {StyleSheet, Text, View} from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import Card from '../components/Card';
 import HeaderComponent from '../components/HeaderComponent';
-import {ScrollView} from 'react-native-gesture-handler';
+import { ScrollView } from 'react-native-gesture-handler';
 
-const Home = ({navigation}) => {
+const Home = ({ navigation }) => {
   const data = [
     {
       id: 1,
@@ -15,17 +15,11 @@ const Home = ({navigation}) => {
     {
       id: 2,
       title: 'Deaf',
-      navigation: 'SpeechToText',
+      navigation: 'Deaf',
       image:
         'https://cdn.pixabay.com/photo/2012/04/25/00/43/hearing-41428__340.png',
     },
-    {
-      id: 3,
-      title: 'Dumb',
-      navigation: 'TextToSpeech',
-      image:
-        'https://w7.pngwing.com/pngs/319/68/png-transparent-british-sign-language-language-interpretation-american-sign-language-others-english-hand-sign-thumbnail.png',
-    },
+
     {
       id: 4,
       title: 'Counselling',
@@ -34,7 +28,7 @@ const Home = ({navigation}) => {
         'https://i.pinimg.com/736x/b1/fd/4f/b1fd4f521e136fb90b791903d15cabbf.jpg',
     },
     {
-      id: 5,
+      id: 3,
       title: 'Language Translate',
       navigation: 'LanguageTranslate',
       image:
@@ -51,11 +45,11 @@ const Home = ({navigation}) => {
           style={{
             padding: 15,
             paddingLeft: 25,
-            fontSize: 30,
+            fontSize: 25,
             color: 'black',
             fontWeight: 'bold',
           }}>
-          Explore our Features
+          Explore our Features :-
         </Text>
         <View style={styles.homeCards}>
           {data.map(card => (
@@ -84,7 +78,7 @@ const styles = StyleSheet.create({
   },
 
   container: {
-    backgroundColor: 'white',
+    backgroundColor: '#FFFFFF',
     flex: 1,
   },
 });

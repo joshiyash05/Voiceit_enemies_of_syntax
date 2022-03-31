@@ -42,9 +42,9 @@ const HeaderComponent = () => {
           imageStyle={{
             borderRadius: 20,
           }}>
-          <View style={{justifyContent: 'center', margin: 15, paddingTop: 30}}>
-            <Text style={{fontSize: 25, color: 'black'}}>Your Disability,</Text>
-            <Text style={{fontSize: 20, color: 'black'}}>
+          <View style={{ justifyContent: 'center', margin: 15, paddingTop: 30 }}>
+            <Text style={{ fontSize: 25, color: 'black' }}>Your Disability,</Text>
+            <Text style={{ fontSize: 20, color: 'black' }}>
               Is your Opportunity
             </Text>
           </View>
@@ -58,8 +58,8 @@ export default HeaderComponent;
 
 const styles = StyleSheet.create({
   headerComponent: {
-    marginTop: 20,
-    paddingHorizontal: 30,
+    marginTop: 10,
+    paddingHorizontal: 20,
     paddingVertical: 20,
   },
   headerInfo: {
@@ -67,12 +67,12 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   helloText: {
-    fontSize: 40,
+    fontSize: 20,
     fontWeight: 'bold',
     color: 'black',
   },
   helloBottomText: {
-    fontSize: 20,
+    fontSize: 15,
     fontWeight: 'bold',
     color: 'gray',
   },

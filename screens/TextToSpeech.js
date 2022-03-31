@@ -6,9 +6,9 @@ import {
   TextInput,
   View,
 } from 'react-native';
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Tts from 'react-native-tts';
-const TextToSpeech = ({navigation}) => {
+const TextToSpeech = ({ navigation }) => {
   const [text, setText] = useState('');
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const TextToSpeech = ({navigation}) => {
     Tts.speak(text);
   };
   return (
-    <SafeAreaView style={styles.texttospeech} >      
+    <View style={styles.texttospeech} >
       <TextInput
         placeholder="Enter Text"
         value={text}
@@ -27,18 +27,19 @@ const TextToSpeech = ({navigation}) => {
         style={styles.input}
       />
       <Button title="Speak" onPress={handleVoice} />
-    </SafeAreaView>
+    </View>
   );
 };
 
 export default TextToSpeech;
 
 const styles = StyleSheet.create({
-  texttospeech:{
-    padding:20
+  texttospeech: {
+    padding: 20,
+    backgroundColor: '#FFFFFF'
   },
-  input:{
-    height:100,
-    fontSize:20,
+  input: {
+    height: 100,
+    fontSize: 20,
   }
 })

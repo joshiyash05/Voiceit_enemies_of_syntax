@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import React from 'react';
 
-const Card = ({title, navigation, image, navigate}) => {
+const Card = ({ title, navigation, image, navigate }) => {
   return (
     <TouchableOpacity
       onPress={() => navigation.navigate(navigate)}
@@ -33,7 +33,7 @@ export default Card;
 const styles = StyleSheet.create({
   card: {
     padding: 20,
-    backgroundColor: '#EAEA7F',
+    backgroundColor: '#3BCBFF',
     elevation: 3,
     borderRadius: 30,
     height: 150,

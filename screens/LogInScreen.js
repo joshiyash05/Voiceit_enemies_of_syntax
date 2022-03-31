@@ -31,12 +31,12 @@ export default function LogInScreen({ navigation }) {
 
   return (
     <Background>
-      <Text style={styles.header}>Billion Ables</Text>
-      <TextInput 
+      <Text style={styles.header}>VoiceIT</Text>
+      <TextInput
         label="Name"
         color='#28FF64'
         returnKeyType="next"
-        value={name }
+        value={name}
         onChangeText={text => setName(text)}
         error={!!name.error}
         errorText={name.error}
@@ -88,22 +88,22 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
     marginTop: 4,
-    color:'#FFFFFF'
+    color: '#3BCBFF'
   },
   best: {
-    
-    color:'#FFFFFF'
+
+    color: '#3BCBFF'
   },
- header: {
-    
-  color: theme.colors.primary,
-  fontWeight: '700',
+  header: {
+
+    color: '#3BCBFF',
+    fontWeight: '700',
     fontSize: 30,
-    fontFamily:'Redressed-Regular'
+    fontFamily: 'Redressed-Regular'
   },
   link: {
     fontWeight: 'bold',
-    color: theme.colors.primary,
+    color: '#3BCBFF',
   },
   buttonContainer: {
     width: '60%',
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   button: {
-    backgroundColor: '#28FF64',
+    backgroundColor: '#3BCBFF',
     width: '100%',
     padding: 15,
     borderRadius: 10,
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
   buttonOutline: {
     backgroundColor: 'white',
     marginTop: 5,
-    borderColor: '#0F092D',
+    borderColor: '#3BCBFF',
     borderWidth: 2,
   },
   buttonText: {
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   buttonOutlineText: {
-    color: '#0F092D',
+    color: '#3BCBFF',
     fontWeight: '700',
     fontSize: 16,
   },
