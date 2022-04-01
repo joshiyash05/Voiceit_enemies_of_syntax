@@ -25,7 +25,7 @@ Here at VoiceIt , you'll be able to find various feature you are searching for. 
  
 The biggest reason of VoiceIt software was to Help Differently Abled person with the basic need of communication problem that they are facings in there day to day life and we are probably able to solve the problems 
 
-The feature available in Billion Ables .
+The feature available in VoiceIt .
 <br /> ->Finger Gesture identifier/ Recognizer.
 <br /> ->Object detector
 <br /> ->Speech to text
