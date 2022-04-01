@@ -47,7 +47,8 @@ const LanguageTranslate = () => {
           style={{
             width: '100%',
             height: 250,
-            borderRadius: 30,
+            borderBottomLeftRadius: 30,
+            borderBottomRightRadius: 30
           }}
         />
       </View>
